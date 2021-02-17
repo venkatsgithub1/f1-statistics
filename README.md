@@ -5,10 +5,12 @@
 **The project uses ngx charts as charting library.**
 ---
 [ngxcharts link](https://github.com/swimlane/ngx-charts)
----
+
+
 **Angular Material design is used along with Bootstrap for UI design.**
 ---
 [Angular Material](https://material.angular.io/components/categories)
+
 ## Work in progress.
 ### Work completed:
 - Main page containing world champions and world champion details.

@@ -1,0 +1,38 @@
+hr {
+    background: white;
+    width: 90%;
+    align-content: center;
+}
+
+.container-for-nav {
+    height: 100%;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+.side-nav {
+    width: 6rem;
+    background-color: black;
+    color:white;
+    padding-top: 2%;
+}
+
+.toolbar {
+    background-color:red;
+    color:white;
+    background-image: linear-gradient(red,black);
+}
+
+.mat-toolbar, .mat-drawer-container {
+    font-family: Formula1;
+}
+
+.mainHeading {
+    font-size:20px;
+}
+
+mat-drawer {
+    background-image: url('../assets/F1_NAV_banner.jpg');
+    background-size: cover;
+    background-position: center;
+}

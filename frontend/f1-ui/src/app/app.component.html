@@ -1,0 +1,16 @@
+<mat-drawer-container class="container-for-nav" autosize>
+  <mat-drawer #drawer class="text-center side-nav" mode="side">
+    <a routerLink="/" class="btn btn-danger">Home</a>
+    <hr />
+    <a routerLink="/driversInfo" class="btn btn-danger">Drivers</a>
+    <hr />
+  </mat-drawer>
+
+  <mat-toolbar class="text-center toolbar">
+    <button mat-icon-button class="mr-auto btn btn-dark" (click)="drawer.toggle()">Menu</button>
+    <div style="padding: 1%;" class="mr-auto mainHeading">
+      Formula 1 Statistics
+    </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

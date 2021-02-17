@@ -1,0 +1,26 @@
+.heading {
+    background-color: black;
+    margin-bottom: 1%;
+    box-shadow: 5px 2px 5px 2px red;
+    color:white;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border: 0.25px solid red;
+    // border-radius: 50%;
+    border-width: 2%;
+    box-shadow: 5px 5px 5px 5px black;
+    height:75%;
+  }
+
+  mat-paginator {
+      margin-top:2%;
+  }
+
+  .fake-link {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <input [(ngModel)]="textBeingWritten" typeaheadOptionField="driverName" [typeahead]="dataSource$"
+        [typeaheadAsync]="true" class="form-control" placeholder="Enter Driver Name"
+        (typeaheadOnSelect)="onSelect($event)">
+
+    <div class="row">
+        <div class="col-md-5">
+
+            <h4 class='text-center' *ngIf='pieChartAttributes.loadSpinner || !pieChartAttributes.loading'>Share of
+                results</h4>
+
+            <div class='d-flex justify-content-center align-self-center'>
+                <div class="spinner-grow text-danger text-center" role="status"
+                    *ngIf="pieChartAttributes.loadSpinner && pieChartAttributes.loading">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+            <!-- <ngx-charts-pie-grid [view]="pieChartAttributes.view" [scheme]="pieChartAttributes.colorScheme"
+                [results]="pieChartAttributes.data" *ngIf='!pieChartAttributes.loading'>
+            </ngx-charts-pie-grid> -->
+
+            <ngx-charts-pie-chart [view]="pieChartAttributes.view" [scheme]="pieChartAttributes.colorScheme"
+                [results]="pieChartAttributes.data" [gradient]="pieChartAttributes.gradient"
+                [legend]="pieChartAttributes.showLegend" [labels]="pieChartAttributes.showLabels"
+                [doughnut]="pieChartAttributes.isDoughnut" *ngIf='!pieChartAttributes.loading'
+                [explodeSlices]="pieChartAttributes.explodeSlices" [animations]="pieChartAttributes.animations">
+            </ngx-charts-pie-chart>
+
+        </div>
+
+        <!--2-->
+        <div class="col-md-7">
+
+            <h4 class='text-center'
+                *ngIf='verticalBarChartAttributes.loadSpinner || !verticalBarChartAttributes.loading'>Wins across
+                seasons</h4>
+
+            <div class='d-flex justify-content-center align-self-center'>
+                <div class="spinner-grow text-danger text-center" role="status"
+                    *ngIf="verticalBarChartAttributes.loadSpinner && verticalBarChartAttributes.loading">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+            <ngx-charts-bar-vertical [view]="verticalBarChartAttributes.view"
+                [scheme]="verticalBarChartAttributes.colorScheme" [results]="verticalBarChartAttributes.data"
+                [gradient]="verticalBarChartAttributes.gradient" [xAxis]="verticalBarChartAttributes.showXAxis"
+                [yAxis]="verticalBarChartAttributes.showYAxis" [legend]="verticalBarChartAttributes.showLegend"
+                [showXAxisLabel]="verticalBarChartAttributes.showXAxisLabel"
+                [showYAxisLabel]="verticalBarChartAttributes.showYAxisLabel"
+                [xAxisLabel]="verticalBarChartAttributes.xAxisLabel"
+                [yAxisLabel]="verticalBarChartAttributes.yAxisLabel" *ngIf='!verticalBarChartAttributes.loading'
+                [noBarWhenZero]='verticalBarChartAttributes.noBarWhenZero'
+                [rotateXAxisTicks]='verticalBarChartAttributes.rotateXAxisTicks'>
+            </ngx-charts-bar-vertical>
+
+            <h5 *ngIf="!verticalBarChartAttributes.loading" class='text-center'><i>Driver has
+                    {{verticalBarChartAttributes.numberWins}}
+                    win(s).</i></h5>
+        </div>
+    </div>
+
+    <hr *ngIf="!pieChartAttributes.loading" />
+
+    <!--ROW 2-->
+    <div class="row">
+        <div class="col-md-5">
+            <app-driver-constructors [driverId]="driverIdInContext"></app-driver-constructors>
+        </div>
+        <div class="col-md-7">
+            <app-driver-championships [driverId]="driverIdInContext"></app-driver-championships>
+        </div>
+    </div>
+</div>

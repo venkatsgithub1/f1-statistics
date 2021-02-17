@@ -1,0 +1,18 @@
+{
+    "/f1/api/*": {
+        "target": "http://localhost:8080",
+        "secure": false
+    },
+    "/drivers": {
+        "target": "http://localhost:8080",
+        "secure": false
+    },
+    "/getAllDriversByToken": {
+        "target": "http://localhost:8080",
+        "secure": false
+    },
+    "/driversInfo": {
+        "target": "http://localhost:4200",
+        "secure": false
+    }
+}

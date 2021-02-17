@@ -1,0 +1,22 @@
+<div class="outerDiv">
+    <mat-card>
+        <div *ngIf="driverDetails">
+            <h4>{{ championshipSeason }} World Champion</h4>
+            <hr />
+            <mat-card-title>{{driverDetails.forename}} {{driverDetails.surname}}</mat-card-title>
+            <mat-card-content>
+                <img [src]="driverDetails.imageUrl" />
+                <hr />
+                <p>Nationality: {{driverDetails.nationality}}</p>
+                <hr />
+                <p>Date of birth: {{driverDetails.dob}}</p>
+            </mat-card-content>
+        </div>
+    </mat-card>
+    <ngx-charts-bubble-chart [view]="view" [scheme]="colorScheme" *ngIf="driverStandingsOverTheYearsArray"
+        [results]="driverStandingsOverTheYearsArray" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" [xScaleMin]="xScaleMin" [xScaleMax]="xScaleMax" [yScaleMin]="yScaleMin"
+        [yScaleMax]="yScaleMax" [minRadius]="minRadius" [maxRadius]="maxRadius" [rotateXAxisTicks]="rotateXAxisTicks">
+    </ngx-charts-bubble-chart>
+</div>
